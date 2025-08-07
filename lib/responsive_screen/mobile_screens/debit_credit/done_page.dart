@@ -1,7 +1,4 @@
 import 'package:finance_dashboard/constants/colors.dart';
-import 'package:finance_dashboard/responsive_screen/desktop_screens/desktop_home_page.dart';
-import 'package:finance_dashboard/responsive_screen/mobile_screens/home/mobile_home_page.dart';
-import 'package:finance_dashboard/responsive_screen/screen_decider.dart';
 import 'package:finance_dashboard/services/common_services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

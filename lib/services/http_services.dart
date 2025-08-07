@@ -6,7 +6,7 @@ import 'package:http/http.dart' as http;
 import 'package:provider/provider.dart';
 
 // String endpoint = "http://127.0.0.1:8000/";
-String endpoint = "http://ec2-35-154-160-4.ap-south-1.compute.amazonaws.com:8081/";
+String endpoint = "http://10.171.33.241:8000/";
 
 class HttpServices {
   Future<Map> getBalance() async {

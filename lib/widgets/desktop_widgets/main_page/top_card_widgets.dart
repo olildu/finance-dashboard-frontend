@@ -1,8 +1,6 @@
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:finance_dashboard/constants/colors.dart';
-import 'package:finance_dashboard/responsive_screen/mobile_screens/debit_credit/debit_credit_method.dart';
 import 'package:finance_dashboard/services/common_services.dart';
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
