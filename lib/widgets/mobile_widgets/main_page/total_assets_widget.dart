@@ -7,8 +7,8 @@ import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 Widget totalAssetsWidget(Map data){
-  int sbiBalance = data["variable_expense"] + data["savings"];
-  int iciciBalance = data["monthly_expense_left"].toDouble();
+  int sbiBalance = (data["variable_expense"] + data["savings"]).toInt();
+  int iciciBalance = data["monthly_expense_left"].toInt();
 
   int totalBalance = sbiBalance + iciciBalance;
 

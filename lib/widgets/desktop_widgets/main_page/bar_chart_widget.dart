@@ -140,24 +140,51 @@ class BarChartSample1State extends State<BarChartSample1> {
     );
   }
 
-  List<BarChartGroupData> showingGroups() => List.generate(6, (i) {
-        switch (i) {
-          case 0:
-            return makeGroupData(0, (widget.financialData["category_percentages"]["Food & Drinks"] ?? 0) * 22, isTouched: i == touchedIndex);
-          case 1:
-            return makeGroupData(1, (widget.financialData["category_percentages"]["Nicotine Gum"] ?? 0) * 22, isTouched: i == touchedIndex);
-          case 2:
-            return makeGroupData(2, (widget.financialData["category_percentages"]["Travel"] ?? 0) * 22, isTouched: i == touchedIndex);
-          case 3:
-            return makeGroupData(3, (widget.financialData["category_percentages"]["Bill"] ?? 0) * 22, isTouched: i == touchedIndex);
-          case 4:
-            return makeGroupData(4, (widget.financialData["category_percentages"]["Shopping"] ?? 0) * 22, isTouched: i == touchedIndex);
-          case 5:
-            return makeGroupData(5, (widget.financialData["category_percentages"]["Others"] ?? 0) * 22, isTouched: i == touchedIndex);
-          default:
-            return throw Error();
-        }
-      });
+
+List<BarChartGroupData> showingGroups() => List.generate(6, (i) {
+  switch (i) {
+    case 0:
+      return makeGroupData(
+        0,
+        (((widget.financialData["category_percentages"]["Food & Drinks"] ?? 0).toDouble()) * 22),
+        isTouched: i == touchedIndex,
+      );
+    case 1:
+      return makeGroupData(
+        1,
+        (((widget.financialData["category_percentages"]["Nicotine Gum"] ?? 0).toDouble()) * 22),
+        isTouched: i == touchedIndex,
+      );
+    case 2:
+      return makeGroupData(
+        2,
+        (((widget.financialData["category_percentages"]["Travel"] ?? 0).toDouble()) * 22),
+        isTouched: i == touchedIndex,
+      );
+    case 3:
+      return makeGroupData(
+        3,
+        (((widget.financialData["category_percentages"]["Bill"] ?? 0).toDouble()) * 22),
+        isTouched: i == touchedIndex,
+      );
+    case 4:
+      return makeGroupData(
+        4,
+        (((widget.financialData["category_percentages"]["Shopping"] ?? 0).toDouble()) * 22),
+        isTouched: i == touchedIndex,
+      );
+    case 5:
+      return makeGroupData(
+        5,
+        (((widget.financialData["category_percentages"]["Others"] ?? 0).toDouble()) * 22),
+        isTouched: i == touchedIndex,
+      );
+    default:
+      throw Error();
+  }
+});
+
+
 
   BarChartData mainBarData() {
     return BarChartData(

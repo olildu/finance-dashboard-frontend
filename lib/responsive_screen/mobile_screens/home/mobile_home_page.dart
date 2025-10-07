@@ -44,12 +44,11 @@ class _MobileMainPageState extends State<MobileHomePage> {
               if (snapshot.connectionState == ConnectionState.waiting) {
                 return const Center(child: CircularProgressIndicator());
               } else {
-                monthlyExpenseLeft = snapshot.data!["monthly_expense_left"] ?? 0;
-                savings = snapshot.data!["savings"] ?? 0;
-                variableExpense = snapshot.data!["variable_expense"] ?? 0;
-                mutualFundsTotal = snapshot.data!["mutual_funds_total"] ?? 0;
-                return Padding(
-                  padding: EdgeInsets.all(5.sp),
+                monthlyExpenseLeft = snapshot.data!["monthly_expense_left"].toInt() ?? 0;
+                savings = (snapshot.data!["savings"]).toInt() ?? 0;
+                variableExpense = (snapshot.data!["variable_expense"]).toInt() ?? 0;
+                mutualFundsTotal = (snapshot.data!["mutual_funds_total"]).toInt() ?? 0;
+                return SafeArea(
                   child: SingleChildScrollView(
                     child: Padding(
                       padding: EdgeInsets.only(left: 20.w, right: 20.w, bottom: 40.h),
@@ -58,9 +57,9 @@ class _MobileMainPageState extends State<MobileHomePage> {
                         children: [
                           // title("₹ Total monthlyExpenseLeft"),
                           // balanceWidget(snapshot.data!["monthlyExpenseLeft"], snapshot.data!["spent_today"], snapshot.data!["days_left"]),
-
+                                    
                           Gap(10.h),
-
+                                    
                           SizedBox(
                             width: double.infinity,
                             height: 40.h,
@@ -68,7 +67,7 @@ class _MobileMainPageState extends State<MobileHomePage> {
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 title("Ebin Santhosh"),
-
+                                    
                                 ElevatedButton(
                                   onPressed: () {
                                     Navigator.of(context).push(
@@ -84,27 +83,27 @@ class _MobileMainPageState extends State<MobileHomePage> {
                                   ),
                                   child: const Center(child: Icon(Icons.add_rounded, color: Colors.white,)),
                                 )
-
+                                    
                               ],
                             ),
                           ),
-
+                                    
                           Gap(20.h),
-
+                                    
                           totalAssetsWidget(snapshot.data!),
-
+                                    
                           Gap(20.h),
-
+                                    
                           title("Your Portfolio"),
-
+                                    
                           yourPortFolioWidget([monthlyExpenseLeft, savings, variableExpense, mutualFundsTotal]),
                           
                           Gap(20.h),
-
+                                    
                           title("Your Expenses"),
                           
                           Gap(10.h),
-
+                                    
                           Container(
                             padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 5.h),
                             height: 400,
@@ -115,7 +114,7 @@ class _MobileMainPageState extends State<MobileHomePage> {
                             ),  
                             child: BarChartSample1(financialData: snapshot.data!, showTitle: false,),
                           ),
-
+                                    
                           // summaryWidget(context, snapshot.data!["category_totals"], snapshot.data!["total_expense"], snapshot.data!["category_percentages"]),
                         ],
                       ),

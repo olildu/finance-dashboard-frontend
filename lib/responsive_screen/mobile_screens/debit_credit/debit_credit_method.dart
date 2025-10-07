@@ -117,7 +117,7 @@ class _DebitCreditMethodState extends State<DebitCreditMethod> {
 
 
       body: Padding(
-        padding: EdgeInsets.symmetric(horizontal: 20.0.h),
+        padding: EdgeInsets.symmetric(horizontal: 10.w),
         child: Column(
           mainAxisSize: MainAxisSize.max,
           mainAxisAlignment: MainAxisAlignment.center,
@@ -206,8 +206,8 @@ class _DebitCreditMethodState extends State<DebitCreditMethod> {
       child: AnimatedContainer(
         duration: const Duration(milliseconds: 400),
         curve: Curves.easeInOut,
-        width: 180.h,
-        height: 180.h, 
+        width: 135.h,
+        height: 145.h, 
         padding: EdgeInsets.symmetric(vertical: 30.h),
         margin: EdgeInsets.all(10.h),
         decoration: BoxDecoration(
